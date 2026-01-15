@@ -25,13 +25,14 @@ func present_init_upgrade_data():
 	self.upgrade_level_2_title = "multiplier"
 	self.upgrade_level_2_desc = "+0.1x"
 	self.upgrade_level_2_price = 2000
-	self.upgrade_level_1_price_increase = 2
+	self.upgrade_level_2_price_increase = 2
 	self.upgrade_level_2_level_string = "0"
 	
 	self.upgrade_level_3_title = "alarm"
 	self.upgrade_level_3_desc = "get an alarm"
 	self.upgrade_level_3_price = 100000
 	self.upgrade_level_3_one_time = true
+	self.upgrade_level_3_price_increase = 1
 	self.upgrade_level_3_level_string = "available"
 	
 	self.upgrade_level_4_title = "offset"

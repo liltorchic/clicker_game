@@ -49,36 +49,47 @@ func _ready() -> void:
 func _discount_purchased():
 	update_price_labels()
 	
+#called one time when data upgrade is bought 
 func _data_purchased():
 	hbox_level_1.visible = true
 	hbox_level_2.visible = true
 	hbox_level_3.visible = true
 	hbox_level_4.visible = true
-	data_label_1.text = str(upgrade_1_level)
-	data_label_2.text = str(upgrade_2_level)
-	data_label_3.text = "purchased"
-	data_label_4.text = "purchased" 
+	data_label_3.text = ""
+	data_label_4.text = "" 
 	update_price_labels()
 
 func update_price_labels():
 	if(upgrade_1_price_f != -1):
+		#update price label
 		upgrade_1_price.text = str("%.0f" % [upgrade_1_price_f * Game.discount])
+		#update extra data label
+		data_label_1.text = str(upgrade_1_level)
 	else:
+		#update price label if its a one time purchase
 		upgrade_1_price.text = ""
-		
+	
 	if(upgrade_2_price_f != -1):
+		#update price label
 		upgrade_2_price.text = str("%.0f" % [upgrade_2_price_f * Game.discount])
+		#update extra data label
+		data_label_2.text = str(upgrade_2_level)
 	else:
+		#update price label if its a one time purchase
 		upgrade_2_price.text = ""
 		
 	if(upgrade_3_price_f != -1):	
+		#update price label
 		upgrade_3_price.text = str("%.0f" % [upgrade_3_price_f * Game.discount])
 	else:
+		#update price label if its a one time purchase
 		upgrade_3_price.text = "purchased"	
 		
-	if(upgrade_4_price_f != -1):			
+	if(upgrade_4_price_f != -1):		
+		#update price label	
 		upgrade_4_price.text = str("%.0f" % [upgrade_4_price_f * Game.discount])
 	else:
+		#update price label if its a one time purchase
 		upgrade_4_price.text = "purchased"
 	
 
