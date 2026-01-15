@@ -1,10 +1,7 @@
 bugs
 ----------
-discount extra data field initialized with purchased tag
 multiplier data field should be item multiplier instead of upgrade count
 clicking on button text blocks button press detection
-ticker multiplayer upgrade price doesn't work
-	ticker adds points when at negative point
 
 
 
