@@ -40,6 +40,7 @@ var linked_async_shop_item_timer_defuse
 
 func _ready() -> void:
 	game_loaded.connect(_game_loaded)
+	#register signals to alert when shop items are loaded and initilized
 	shop_item_clicker_loaded.connect(_shop_item_clicker_loaded)
 	shop_item_pet_loaded.connect(_shop_item_pet_loaded)
 	shop_item_ticker_loaded.connect(_shop_item_ticker_loaded)
@@ -157,7 +158,7 @@ func _game_loaded():
 		print("loading saved game")
 		load_game()
 	else:
-		print("loading new game")
+		print("creating new game")
 		
 		
 
@@ -172,6 +173,7 @@ func load_game() -> void:
 	var save_dict := json.get_data() as Dictionary
 	var distraction_target = get_tree().get_first_node_in_group("distraction_target")
 
+	#preload assets
 	var _distraction_clicker = preload("res://scenes/distractions/distraction_clicker.tscn")
 	var _distraction_pet = preload("res://scenes/distractions/distraction_pet.tscn")
 	var _distraction_ticker = preload("res://scenes/distractions/distraction_ticker.tscn")
@@ -209,15 +211,18 @@ func load_game() -> void:
 			distraction_ref = _distraction_timer_button
 		elif(enumtype == Constants.Type.TIMER_SUPRISE):
 			distraction_ref = _distraction_timer_suprise
-			
-		var item:Distraction = distraction_ref.instantiate()
 		
+		#new template item
+		var item:Distraction = distraction_ref.instantiate()
+		#fill in data
 		item.savedata = distract.data.stats.duplicate()
 		item.UI_MODE = false
 		item.loading_from_save = true
 		item.loadSaveData()
+		#commit to scene tree
 		distraction_target.add_child(item)
 	
+	#for saved shop entries
 	for shopies: Dictionary in save_dict.shopItemz:
 		if(str_to_var(shopies.data.stats.id) == "clicker"):	
 			linked_async_shop_item_clicker.loadSaveData(shopies.data.stats)
