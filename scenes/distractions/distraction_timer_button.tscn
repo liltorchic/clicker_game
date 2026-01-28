@@ -1,17 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwdsegyhepe5o"]
+[gd_scene format=3 uid="uid://bwdsegyhepe5o"]
 
 [ext_resource type="Script" uid="uid://chfyo4sbk14ri" path="res://scripts/disctactions/distraction_timer_button.gd" id="1_tm04t"]
 
-[node name="distraction_timer_button" type="ColorRect" groups=["d_timer_button", "distraction"]]
+[node name="distraction_timer_button" type="ColorRect" unique_id=1403739040 groups=["d_timer_button", "distraction"]]
 custom_minimum_size = Vector2(128, 128)
 script = ExtResource("1_tm04t")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=587200363]
 
-[node name="Timer_Scorer" type="Timer" parent="."]
+[node name="Timer_Scorer" type="Timer" parent="." unique_id=1969796714]
 editor_description = "Used for assigning points to the game manager"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1361086746]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
@@ -27,7 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "reset"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1636123783]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

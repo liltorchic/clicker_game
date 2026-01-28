@@ -1,20 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://du4e4oykiyos"]
+[gd_scene format=3 uid="uid://du4e4oykiyos"]
 
 [ext_resource type="Script" uid="uid://dpr3kjlg4654n" path="res://scripts/disctactions/distraction_pet.gd" id="1_q215s"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_011nb"]
 
-[node name="distraction_pet" type="ColorRect" groups=["d_pet", "distraction"]]
+[node name="distraction_pet" type="ColorRect" unique_id=551344688 groups=["d_pet", "distraction"]]
 custom_minimum_size = Vector2(128, 128)
 script = ExtResource("1_q215s")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1656120610]
 wait_time = 3.0
 
-[node name="Timer_Scorer" type="Timer" parent="."]
+[node name="Timer_Scorer" type="Timer" parent="." unique_id=1774236921]
 editor_description = "Used for assigning points to the game manager"
 
-[node name="Button_Food" type="Button" parent="."]
+[node name="Button_Food" type="Button" parent="." unique_id=7385776]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
@@ -31,7 +31,7 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 text = "food"
 
-[node name="Button_Water" type="Button" parent="."]
+[node name="Button_Water" type="Button" parent="." unique_id=1987373578]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
@@ -48,7 +48,7 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 text = "water"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=358656675]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -65,7 +65,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "pet"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1234133724]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

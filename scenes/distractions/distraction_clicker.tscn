@@ -1,12 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://criwwmy7de7bw"]
+[gd_scene format=3 uid="uid://criwwmy7de7bw"]
 
 [ext_resource type="Script" uid="uid://y1g6j227iswe" path="res://scripts/disctactions/distraction_clicker.gd" id="1_6jgap"]
 
-[node name="distraction_clicker" type="ColorRect" groups=["d_clicker", "distraction"]]
+[node name="distraction_clicker" type="ColorRect" unique_id=1818444677 groups=["d_clicker", "distraction"]]
 custom_minimum_size = Vector2(128, 128)
 script = ExtResource("1_6jgap")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=462714118]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
@@ -22,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "click"
 
-[node name="clicker" type="Label" parent="."]
+[node name="clicker" type="Label" parent="." unique_id=580514470]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,7 +38,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "clicker"
 
-[node name="Timer_Autoclick" type="Timer" parent="."]
+[node name="Timer_Autoclick" type="Timer" parent="." unique_id=1019165661]
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

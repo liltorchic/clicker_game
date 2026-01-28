@@ -1,17 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1733btlluhvb"]
+[gd_scene format=3 uid="uid://b1733btlluhvb"]
 
 [ext_resource type="Script" uid="uid://dei6k0i7cbeqj" path="res://scripts/disctactions/distraction_ticker.gd" id="1_dbfkp"]
 
-[node name="distraction_ticker" type="ColorRect" groups=["d_ticker", "distraction"]]
+[node name="distraction_ticker" type="ColorRect" unique_id=2111218088 groups=["d_ticker", "distraction"]]
 custom_minimum_size = Vector2(128, 128)
 script = ExtResource("1_dbfkp")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=345599653]
 
-[node name="Timer_Scorer" type="Timer" parent="."]
+[node name="Timer_Scorer" type="Timer" parent="." unique_id=1715288437]
 editor_description = "Used for assigning points to the game manager"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=924393187]
 layout_direction = 1
 layout_mode = 1
 anchors_preset = 7
@@ -27,7 +27,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "+1"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1035453512]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,7 +43,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "ticker"
 
-[node name="CheckButton" type="CheckButton" parent="."]
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1297283504]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -57,7 +57,7 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CheckButton"]
+[node name="Label" type="Label" parent="CheckButton" unique_id=757311358]
 layout_mode = 0
 offset_left = 39.0
 offset_right = 79.0

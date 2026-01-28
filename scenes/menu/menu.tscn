@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfk4sxkvl3rvm"]
+[gd_scene format=3 uid="uid://bfk4sxkvl3rvm"]
 
 [ext_resource type="Script" uid="uid://bi04ch65dfyld" path="res://scripts/ui/menu/menu.gd" id="1_klgdb"]
 [ext_resource type="AudioStream" uid="uid://dxpv4y3o28x8" path="res://sounds/project_20.ogg" id="2_mcvr8"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y1u3h"]
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" unique_id=1643053398]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_klgdb")
 
-[node name="menu" type="VBoxContainer" parent="."]
+[node name="menu" type="VBoxContainer" parent="." unique_id=1295916543]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,45 +28,45 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="menu"]
+[node name="TextureRect" type="TextureRect" parent="menu" unique_id=492687953]
 custom_minimum_size = Vector2(400, 150)
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_y1u3h")
 stretch_mode = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="menu"]
+[node name="CenterContainer" type="CenterContainer" parent="menu" unique_id=353041849]
 layout_mode = 2
 
-[node name="Button_new" type="Button" parent="menu/CenterContainer"]
+[node name="Button_new" type="Button" parent="menu/CenterContainer" unique_id=1327555102]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 text = "New Game"
 
-[node name="CenterContainer2" type="CenterContainer" parent="menu"]
+[node name="CenterContainer2" type="CenterContainer" parent="menu" unique_id=161402176]
 layout_mode = 2
 
-[node name="Button_load" type="Button" parent="menu/CenterContainer2"]
+[node name="Button_load" type="Button" parent="menu/CenterContainer2" unique_id=397453055]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 text = "Load Game"
 
-[node name="CenterContainer3" type="CenterContainer" parent="menu"]
+[node name="CenterContainer3" type="CenterContainer" parent="menu" unique_id=105135143]
 layout_mode = 2
 
-[node name="Button_settings" type="Button" parent="menu/CenterContainer3"]
+[node name="Button_settings" type="Button" parent="menu/CenterContainer3" unique_id=533157280]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 text = "Settings"
 
-[node name="CenterContainer4" type="CenterContainer" parent="menu"]
+[node name="CenterContainer4" type="CenterContainer" parent="menu" unique_id=1609946764]
 layout_mode = 2
 
-[node name="Button_quit" type="Button" parent="menu/CenterContainer4"]
+[node name="Button_quit" type="Button" parent="menu/CenterContainer4" unique_id=865642105]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 text = "Quit"
 
-[node name="settings" type="VBoxContainer" parent="."]
+[node name="settings" type="VBoxContainer" parent="." unique_id=1135279850]
 visible = false
 custom_minimum_size = Vector2(200, 250)
 layout_mode = 1
@@ -83,82 +83,82 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="HBoxContainer_Music" type="HBoxContainer" parent="settings"]
+[node name="HBoxContainer_Music" type="HBoxContainer" parent="settings" unique_id=1851296868]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settings/HBoxContainer_Music"]
+[node name="Label" type="Label" parent="settings/HBoxContainer_Music" unique_id=80149806]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "Music"
 
-[node name="HSlider" type="HSlider" parent="settings/HBoxContainer_Music"]
+[node name="HSlider" type="HSlider" parent="settings/HBoxContainer_Music" unique_id=1251789837]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="HBoxContainer_Clicks" type="HBoxContainer" parent="settings"]
+[node name="HBoxContainer_Clicks" type="HBoxContainer" parent="settings" unique_id=427891853]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settings/HBoxContainer_Clicks"]
+[node name="Label" type="Label" parent="settings/HBoxContainer_Clicks" unique_id=266568943]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "Clicks"
 
-[node name="HSlider" type="HSlider" parent="settings/HBoxContainer_Clicks"]
+[node name="HSlider" type="HSlider" parent="settings/HBoxContainer_Clicks" unique_id=1098577188]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="HBoxContainer_Amb" type="HBoxContainer" parent="settings"]
+[node name="HBoxContainer_Amb" type="HBoxContainer" parent="settings" unique_id=1305155249]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settings/HBoxContainer_Amb"]
+[node name="Label" type="Label" parent="settings/HBoxContainer_Amb" unique_id=60810163]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "Amb"
 
-[node name="HSlider" type="HSlider" parent="settings/HBoxContainer_Amb"]
+[node name="HSlider" type="HSlider" parent="settings/HBoxContainer_Amb" unique_id=90401593]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="HBoxContainer_SFX" type="HBoxContainer" parent="settings"]
+[node name="HBoxContainer_SFX" type="HBoxContainer" parent="settings" unique_id=947548069]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settings/HBoxContainer_SFX"]
+[node name="Label" type="Label" parent="settings/HBoxContainer_SFX" unique_id=2082857657]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "SFX"
 
-[node name="HSlider" type="HSlider" parent="settings/HBoxContainer_SFX"]
+[node name="HSlider" type="HSlider" parent="settings/HBoxContainer_SFX" unique_id=1214253298]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="HBoxContainer_Alarm" type="HBoxContainer" parent="settings"]
+[node name="HBoxContainer_Alarm" type="HBoxContainer" parent="settings" unique_id=1323484096]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settings/HBoxContainer_Alarm"]
+[node name="Label" type="Label" parent="settings/HBoxContainer_Alarm" unique_id=1441335489]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "Alarm"
 
-[node name="HSlider" type="HSlider" parent="settings/HBoxContainer_Alarm"]
+[node name="HSlider" type="HSlider" parent="settings/HBoxContainer_Alarm" unique_id=1740014011]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="OptionButton" type="OptionButton" parent="settings"]
+[node name="OptionButton" type="OptionButton" parent="settings" unique_id=1151202041]
 layout_mode = 2
 item_count = 3
 popup/item_0/text = "Windowed"
@@ -168,21 +168,21 @@ popup/item_1/id = 1
 popup/item_2/text = "fullscreen"
 popup/item_2/id = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="settings"]
+[node name="CenterContainer" type="CenterContainer" parent="settings" unique_id=337888094]
 layout_mode = 2
 
-[node name="Button_savefldr" type="Button" parent="settings/CenterContainer"]
+[node name="Button_savefldr" type="Button" parent="settings/CenterContainer" unique_id=1479719428]
 layout_mode = 2
 text = "open save folder"
 
-[node name="CenterContainer2" type="CenterContainer" parent="settings"]
+[node name="CenterContainer2" type="CenterContainer" parent="settings" unique_id=1197477058]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="settings/CenterContainer2"]
+[node name="Button" type="Button" parent="settings/CenterContainer2" unique_id=794933808]
 layout_mode = 2
 text = "back"
 
-[node name="load" type="VBoxContainer" parent="."]
+[node name="load" type="VBoxContainer" parent="." unique_id=1750396963]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -197,17 +197,17 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="load"]
+[node name="HBoxContainer" type="HBoxContainer" parent="load" unique_id=247550748]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="load/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="load/HBoxContainer" unique_id=2118210340]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="load/HBoxContainer/CenterContainer"]
+[node name="Button" type="Button" parent="load/HBoxContainer/CenterContainer" unique_id=229198659]
 layout_mode = 2
 text = "back"
 
-[node name="menu_music" type="AudioStreamPlayer" parent="."]
+[node name="menu_music" type="AudioStreamPlayer" parent="." unique_id=1232266364]
 stream = ExtResource("2_mcvr8")
 autoplay = true
 bus = &"Music"

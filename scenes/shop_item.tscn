@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://diriaal6astgh"]
+[gd_scene format=3 uid="uid://diriaal6astgh"]
 
 [ext_resource type="Script" uid="uid://bmdyjkhyyap4m" path="res://scripts/ui/ui_shop_item.gd" id="1_lrx6i"]
 
-[node name="ShopItem" type="Control" groups=["shopItem"]]
+[node name="ShopItem" type="Control" unique_id=147759848 groups=["shopItem"]]
 custom_minimum_size = Vector2(145, 200)
 layout_mode = 3
 anchors_preset = 0
@@ -12,14 +12,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 2
 script = ExtResource("1_lrx6i")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1344703668]
 custom_minimum_size = Vector2(145, 200)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.589096, 0.589096, 0.589096, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1294189011]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -30,18 +30,18 @@ offset_right = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label_Title" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="Label_Title" type="Label" parent="ColorRect/VBoxContainer" unique_id=136386805]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 text = "title"
 
-[node name="Container" type="Control" parent="ColorRect/VBoxContainer"]
+[node name="Container" type="Control" parent="ColorRect/VBoxContainer" unique_id=747475079]
 clip_contents = true
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Container" groups=["placeholder"]]
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Container" unique_id=300238436 groups=["placeholder"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,16 +49,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=888522568]
 layout_mode = 2
 size_flags_stretch_ratio = 0.6
 
-[node name="Label_Price" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer"]
+[node name="Label_Price" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=456979709]
 layout_mode = 2
 size_flags_horizontal = 2
 text = "price"
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=16551758]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 10

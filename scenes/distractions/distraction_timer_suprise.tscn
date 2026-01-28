@@ -1,18 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://fii1xpxifsun"]
+[gd_scene format=3 uid="uid://fii1xpxifsun"]
 
 [ext_resource type="Script" uid="uid://b8856euvmr15g" path="res://scripts/disctactions/distraction_timer_defuse.gd" id="1_ju7hv"]
 
-[node name="distraction_timer_suprise" type="ColorRect" groups=["d_timer_suprise", "distraction"]]
+[node name="distraction_timer_suprise" type="ColorRect" unique_id=1014961153 groups=["d_timer_suprise", "distraction"]]
 custom_minimum_size = Vector2(128, 128)
 script = ExtResource("1_ju7hv")
 
-[node name="TimerCountdown" type="Timer" parent="."]
+[node name="TimerCountdown" type="Timer" parent="." unique_id=857244602]
 wait_time = 3.0
 
-[node name="TimerHidden" type="Timer" parent="."]
+[node name="TimerHidden" type="Timer" parent="." unique_id=1516631819]
 wait_time = 20.0
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=531733738]
 visible = false
 layout_direction = 1
 layout_mode = 1
@@ -29,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "defuse"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=272929455]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

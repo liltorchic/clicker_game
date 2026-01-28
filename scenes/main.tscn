@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmab5sthll2kw"]
+[gd_scene format=3 uid="uid://dmab5sthll2kw"]
 
 [ext_resource type="Texture2D" uid="uid://ctj4tc3mdt4ca" path="res://textures/brain1.png" id="2_tbgi4"]
 [ext_resource type="Script" uid="uid://ddqd6x68oc8ca" path="res://scripts/ui/graphics/brain_texture.gd" id="3_tefeu"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://coqm2j3xd3wot" path="res://scenes/upgrade_item_base.tscn" id="5_tefeu"]
 [ext_resource type="Script" uid="uid://d21fc0y6shsto" path="res://scripts/ui/ui_shop.gd" id="7_o6xl0"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=956042853]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,7 +18,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="game" type="Panel" parent="."]
+[node name="game" type="Panel" parent="." unique_id=1742382020]
 process_mode = 1
 z_index = -1
 layout_mode = 1
@@ -31,7 +31,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="game"]
+[node name="HBoxContainer" type="HBoxContainer" parent="game" unique_id=1210462848]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,18 +41,18 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="VBoxContainer_UI" type="VBoxContainer" parent="game/HBoxContainer"]
+[node name="VBoxContainer_UI" type="VBoxContainer" parent="game/HBoxContainer" unique_id=1640588334]
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ColorRect" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI"]
+[node name="ColorRect" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI" unique_id=395798485]
 clip_contents = true
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="container_scorer_ver" type="VBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect"]
+[node name="container_scorer_ver" type="VBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect" unique_id=42948069]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -68,74 +68,74 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_tbgi4")
 
-[node name="container_lives_hor" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver"]
+[node name="container_lives_hor" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver" unique_id=159702642]
 layout_mode = 2
 
-[node name="Label_Lives" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_lives_hor"]
+[node name="Label_Lives" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_lives_hor" unique_id=50259136]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "lives"
 
-[node name="Label_Lives_num" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_lives_hor"]
+[node name="Label_Lives_num" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_lives_hor" unique_id=512202867]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "#"
 
-[node name="container_points_hor" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver"]
+[node name="container_points_hor" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver" unique_id=1883524364]
 layout_mode = 2
 
-[node name="Label_Points" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_points_hor"]
+[node name="Label_Points" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_points_hor" unique_id=337316598]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "points"
 
-[node name="Label_Points_num" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_points_hor"]
+[node name="Label_Points_num" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_points_hor" unique_id=257462410]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "#"
 
-[node name="container_mult_hor" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver"]
+[node name="container_mult_hor" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver" unique_id=1066462749]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_mult_hor"]
+[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_mult_hor" unique_id=1628551847]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "mult"
 
-[node name="Label_Multiplier" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_mult_hor"]
+[node name="Label_Multiplier" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_mult_hor" unique_id=1116446872]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "#"
 
-[node name="container_100kp_extra" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver"]
+[node name="container_100kp_extra" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver" unique_id=1084223690]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_100kp_extra"]
+[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_100kp_extra" unique_id=271230847]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "100k's"
 
-[node name="Label_100kp_data" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_100kp_extra"]
+[node name="Label_100kp_data" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_100kp_extra" unique_id=1605034899]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "#"
 
-[node name="container_discount_extra" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver"]
+[node name="container_discount_extra" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver" unique_id=70692919]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_discount_extra"]
+[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_discount_extra" unique_id=499139642]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "discount: "
 
-[node name="Label_discount_data" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_discount_extra"]
+[node name="Label_discount_data" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver/container_discount_extra" unique_id=439797138]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "#"
 
-[node name="container_settings_vert" type="VBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect"]
+[node name="container_settings_vert" type="VBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect" unique_id=87269976]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -148,38 +148,38 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="CenterContainer" type="CenterContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert"]
+[node name="CenterContainer" type="CenterContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert" unique_id=1424169762]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer" unique_id=726701735]
 z_index = 1
 z_as_relative = false
 layout_mode = 2
 
-[node name="Button_Settings" type="Button" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer/HBoxContainer"]
+[node name="Button_Settings" type="Button" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer/HBoxContainer" unique_id=151780642]
 layout_mode = 2
 text = "settings"
 
-[node name="Button_Save_and_Quit" type="Button" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer/HBoxContainer"]
+[node name="Button_Save_and_Quit" type="Button" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer/HBoxContainer" unique_id=1789558149]
 layout_mode = 2
 text = "save & quit"
 
-[node name="Button_Quit" type="Button" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer/HBoxContainer"]
+[node name="Button_Quit" type="Button" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer/HBoxContainer" unique_id=1966796459]
 layout_mode = 2
 text = "quit"
 
-[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert"]
+[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert" unique_id=1980956216]
 modulate = Color(0.691357, 0.691357, 0.691357, 1)
 layout_mode = 2
 text = "created by Alex Koehn :3"
 
-[node name="ColorRect" type="ColorRect" parent="game/HBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="game/HBoxContainer" unique_id=560965074]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.8
 color = Color(0.454524, 0.454524, 0.454524, 1)
 
-[node name="brain_texture" type="TextureRect" parent="game/HBoxContainer/ColorRect"]
+[node name="brain_texture" type="TextureRect" parent="game/HBoxContainer/ColorRect" unique_id=865440646]
 y_sort_enabled = true
 texture_filter = 3
 layout_mode = 1
@@ -196,11 +196,11 @@ expand_mode = 1
 stretch_mode = 1
 script = ExtResource("3_tefeu")
 
-[node name="AudioStreamPlayer2D_A" type="AudioStreamPlayer2D" parent="game/HBoxContainer/ColorRect/brain_texture"]
+[node name="AudioStreamPlayer2D_A" type="AudioStreamPlayer2D" parent="game/HBoxContainer/ColorRect/brain_texture" unique_id=2050197586]
 stream = ExtResource("4_o6xl0")
 bus = &"SFX"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="game/HBoxContainer/ColorRect"]
+[node name="ScrollContainer" type="ScrollContainer" parent="game/HBoxContainer/ColorRect" unique_id=778730147]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -208,26 +208,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="distractions" type="GridContainer" parent="game/HBoxContainer/ColorRect/ScrollContainer" groups=["distraction_target"]]
+[node name="distractions" type="GridContainer" parent="game/HBoxContainer/ColorRect/ScrollContainer" unique_id=1941195967 groups=["distraction_target"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 columns = 2
 
-[node name="VBoxContainer_UI_Upgrade" type="VBoxContainer" parent="game/HBoxContainer"]
+[node name="VBoxContainer_UI_Upgrade" type="VBoxContainer" parent="game/HBoxContainer" unique_id=352290290]
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 6.66
 alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade"]
+[node name="ColorRect" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade" unique_id=1585630235]
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect" unique_id=1805742122]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -235,7 +235,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="shop" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer"]
+[node name="shop" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer" unique_id=1017955114]
 custom_minimum_size = Vector2(191.755, 195.595)
 layout_mode = 2
 size_flags_vertical = 3
@@ -243,7 +243,7 @@ size_flags_stretch_ratio = 1.4
 color = Color(0.121569, 1, 1, 1)
 script = ExtResource("7_o6xl0")
 
-[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop"]
+[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop" unique_id=907477376]
 custom_minimum_size = Vector2(6.305, 7.02)
 layout_mode = 1
 offset_left = 30.0
@@ -253,7 +253,7 @@ offset_bottom = 53.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "shop"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop"]
+[node name="ScrollContainer" type="ScrollContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop" unique_id=1067357995]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -262,19 +262,19 @@ offset_top = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="FlowContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop/ScrollContainer" groups=["shop_target"]]
+[node name="GridContainer" type="FlowContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop/ScrollContainer" unique_id=638855549 groups=["shop_target"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="upgrade" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer"]
+[node name="upgrade" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer" unique_id=1823620624]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
 color = Color(0.801395, 0.957694, 0, 1)
 
-[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/upgrade"]
+[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/upgrade" unique_id=1928574458]
 custom_minimum_size = Vector2(6.305, 7.02)
 layout_mode = 0
 offset_left = 30.0
@@ -284,7 +284,7 @@ offset_bottom = 53.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "upgrade"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/upgrade"]
+[node name="ScrollContainer" type="ScrollContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/upgrade" unique_id=1785560091]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -293,15 +293,15 @@ offset_top = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/upgrade/ScrollContainer" groups=["upgrade_target"]]
+[node name="VBoxContainer" type="VBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/upgrade/ScrollContainer" unique_id=883351129 groups=["upgrade_target"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="UpgradeItemMain" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/upgrade/ScrollContainer/VBoxContainer" instance=ExtResource("5_tefeu")]
+[node name="UpgradeItemMain" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/upgrade/ScrollContainer/VBoxContainer" unique_id=781306174 instance=ExtResource("5_tefeu")]
 layout_mode = 2
 
-[node name="settings" type="Panel" parent="."]
+[node name="settings" type="Panel" parent="." unique_id=486777675]
 process_mode = 2
 visible = false
 layout_mode = 1
@@ -312,7 +312,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_jyhfs")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="settings"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="settings" unique_id=1874496041]
 custom_minimum_size = Vector2(200, 250)
 layout_mode = 1
 anchors_preset = 8
@@ -328,82 +328,82 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="HBoxContainer_Music" type="HBoxContainer" parent="settings/VBoxContainer2"]
+[node name="HBoxContainer_Music" type="HBoxContainer" parent="settings/VBoxContainer2" unique_id=535560276]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settings/VBoxContainer2/HBoxContainer_Music"]
+[node name="Label" type="Label" parent="settings/VBoxContainer2/HBoxContainer_Music" unique_id=407473395]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "Music"
 
-[node name="HSlider" type="HSlider" parent="settings/VBoxContainer2/HBoxContainer_Music"]
+[node name="HSlider" type="HSlider" parent="settings/VBoxContainer2/HBoxContainer_Music" unique_id=1171579868]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="HBoxContainer_Clicks" type="HBoxContainer" parent="settings/VBoxContainer2"]
+[node name="HBoxContainer_Clicks" type="HBoxContainer" parent="settings/VBoxContainer2" unique_id=934623788]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settings/VBoxContainer2/HBoxContainer_Clicks"]
+[node name="Label" type="Label" parent="settings/VBoxContainer2/HBoxContainer_Clicks" unique_id=1990069912]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "Clicks"
 
-[node name="HSlider" type="HSlider" parent="settings/VBoxContainer2/HBoxContainer_Clicks"]
+[node name="HSlider" type="HSlider" parent="settings/VBoxContainer2/HBoxContainer_Clicks" unique_id=1995679473]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="HBoxContainer_Amb" type="HBoxContainer" parent="settings/VBoxContainer2"]
+[node name="HBoxContainer_Amb" type="HBoxContainer" parent="settings/VBoxContainer2" unique_id=479034772]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settings/VBoxContainer2/HBoxContainer_Amb"]
+[node name="Label" type="Label" parent="settings/VBoxContainer2/HBoxContainer_Amb" unique_id=390609084]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "Amb"
 
-[node name="HSlider" type="HSlider" parent="settings/VBoxContainer2/HBoxContainer_Amb"]
+[node name="HSlider" type="HSlider" parent="settings/VBoxContainer2/HBoxContainer_Amb" unique_id=1293385259]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="HBoxContainer_SFX" type="HBoxContainer" parent="settings/VBoxContainer2"]
+[node name="HBoxContainer_SFX" type="HBoxContainer" parent="settings/VBoxContainer2" unique_id=1641248291]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settings/VBoxContainer2/HBoxContainer_SFX"]
+[node name="Label" type="Label" parent="settings/VBoxContainer2/HBoxContainer_SFX" unique_id=450548]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "SFX"
 
-[node name="HSlider" type="HSlider" parent="settings/VBoxContainer2/HBoxContainer_SFX"]
+[node name="HSlider" type="HSlider" parent="settings/VBoxContainer2/HBoxContainer_SFX" unique_id=1871520709]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="HBoxContainer_Alarm" type="HBoxContainer" parent="settings/VBoxContainer2"]
+[node name="HBoxContainer_Alarm" type="HBoxContainer" parent="settings/VBoxContainer2" unique_id=1034822045]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="settings/VBoxContainer2/HBoxContainer_Alarm"]
+[node name="Label" type="Label" parent="settings/VBoxContainer2/HBoxContainer_Alarm" unique_id=699741050]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "Alarm"
 
-[node name="HSlider" type="HSlider" parent="settings/VBoxContainer2/HBoxContainer_Alarm"]
+[node name="HSlider" type="HSlider" parent="settings/VBoxContainer2/HBoxContainer_Alarm" unique_id=802438652]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="OptionButton" type="OptionButton" parent="settings/VBoxContainer2"]
+[node name="OptionButton" type="OptionButton" parent="settings/VBoxContainer2" unique_id=335751298]
 layout_mode = 2
 item_count = 3
 popup/item_0/text = "Windowed"
@@ -413,23 +413,23 @@ popup/item_1/id = 1
 popup/item_2/text = "fullscreen"
 popup/item_2/id = 2
 
-[node name="CenterContainer3" type="CenterContainer" parent="settings/VBoxContainer2"]
+[node name="CenterContainer3" type="CenterContainer" parent="settings/VBoxContainer2" unique_id=1471981206]
 layout_mode = 2
 
-[node name="Button_quit" type="Button" parent="settings/VBoxContainer2/CenterContainer3"]
+[node name="Button_quit" type="Button" parent="settings/VBoxContainer2/CenterContainer3" unique_id=205723806]
 layout_mode = 2
 text = "save & quit
 "
 
-[node name="CenterContainer2" type="CenterContainer" parent="settings/VBoxContainer2"]
+[node name="CenterContainer2" type="CenterContainer" parent="settings/VBoxContainer2" unique_id=1625136197]
 layout_mode = 2
 
-[node name="Button_resume" type="Button" parent="settings/VBoxContainer2/CenterContainer2"]
+[node name="Button_resume" type="Button" parent="settings/VBoxContainer2/CenterContainer2" unique_id=1292721593]
 layout_mode = 2
 text = "resume
 "
 
-[node name="ui" type="Control" parent="."]
+[node name="ui" type="Control" parent="." unique_id=1757925997]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
