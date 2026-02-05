@@ -52,6 +52,27 @@ custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="Control" type="Control" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect" unique_id=117424566]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 121.0
+grow_horizontal = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/Control" unique_id=229234592]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect/Control/CenterContainer" unique_id=482058508]
+layout_mode = 2
+text = "shop"
+
 [node name="container_scorer_ver" type="VBoxContainer" parent="game/HBoxContainer/VBoxContainer_UI/ColorRect" unique_id=42948069]
 unique_name_in_owner = true
 layout_mode = 1
@@ -235,38 +256,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="shop" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer" unique_id=1017955114]
-custom_minimum_size = Vector2(191.755, 195.595)
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 1.4
-color = Color(0.121569, 1, 1, 1)
-script = ExtResource("7_o6xl0")
-
-[node name="Label" type="Label" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop" unique_id=907477376]
-custom_minimum_size = Vector2(6.305, 7.02)
-layout_mode = 1
-offset_left = 30.0
-offset_top = 30.0
-offset_right = 70.0
-offset_bottom = 53.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "shop"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop" unique_id=1067357995]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 68.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GridContainer" type="FlowContainer" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop/ScrollContainer" unique_id=638855549 groups=["shop_target"]]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="upgrade" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer" unique_id=1823620624]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
@@ -300,6 +289,71 @@ size_flags_vertical = 4
 
 [node name="UpgradeItemMain" parent="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/upgrade/ScrollContainer/VBoxContainer" unique_id=781306174 instance=ExtResource("5_tefeu")]
 layout_mode = 2
+
+[node name="shop" type="Panel" parent="game" unique_id=285940100]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="game/shop" unique_id=365786287]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="shop" type="ColorRect" parent="game/shop/CenterContainer" unique_id=1332296726]
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.4
+color = Color(0.120000005, 1, 1, 0.7372549)
+script = ExtResource("7_o6xl0")
+
+[node name="Label" type="Label" parent="game/shop/CenterContainer/shop" unique_id=1117894674]
+custom_minimum_size = Vector2(6.305, 7.02)
+layout_mode = 1
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 70.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "shop"
+
+[node name="MarginContainer" type="MarginContainer" parent="game/shop/CenterContainer/shop" unique_id=895924357]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 100
+
+[node name="ScrollContainer" type="ScrollContainer" parent="game/shop/CenterContainer/shop/MarginContainer" unique_id=630596878]
+layout_mode = 2
+
+[node name="GridContainer" type="FlowContainer" parent="game/shop/CenterContainer/shop/MarginContainer/ScrollContainer" unique_id=299685964 groups=["shop_target"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button_back" type="Button" parent="game/shop/CenterContainer/shop" unique_id=1633531945]
+z_index = 1
+layout_mode = 0
+offset_left = 106.0
+offset_top = 28.0
+offset_right = 151.0
+offset_bottom = 59.0
+text = "back"
 
 [node name="settings" type="Panel" parent="." unique_id=486777675]
 process_mode = 2
@@ -430,15 +484,20 @@ text = "resume
 "
 
 [node name="ui" type="Control" parent="." unique_id=1757925997]
+visible = false
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 35.0
+offset_top = 145.0
+offset_right = 75.0
+offset_bottom = 185.0
 
+[connection signal="pressed" from="game/HBoxContainer/VBoxContainer_UI/ColorRect/Control/CenterContainer/Button" to="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver" method="_on_button_pressed"]
 [connection signal="pressed" from="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer/HBoxContainer/Button_Settings" to="settings" method="_on_button_settings_pressed"]
 [connection signal="pressed" from="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer/HBoxContainer/Button_Save_and_Quit" to="settings" method="_on_button_save_and_quit_pressed"]
 [connection signal="pressed" from="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_settings_vert/CenterContainer/HBoxContainer/Button_Quit" to="settings" method="_on_button_quit_pressed"]
 [connection signal="child_entered_tree" from="game/HBoxContainer/ColorRect/ScrollContainer/distractions" to="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/upgrade" method="_on_distractions_child_entered_tree"]
-[connection signal="child_entered_tree" from="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop/ScrollContainer/GridContainer" to="game/HBoxContainer/VBoxContainer_UI_Upgrade/ColorRect/VBoxContainer/shop" method="_on_grid_container_child_entered_tree"]
+[connection signal="child_entered_tree" from="game/shop/CenterContainer/shop/MarginContainer/ScrollContainer/GridContainer" to="game/shop/CenterContainer/shop" method="_on_grid_container_child_entered_tree"]
+[connection signal="pressed" from="game/shop/CenterContainer/shop/Button_back" to="game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver" method="_on_button_back_pressed"]
 [connection signal="value_changed" from="settings/VBoxContainer2/HBoxContainer_Music/HSlider" to="settings" method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="settings/VBoxContainer2/HBoxContainer_Clicks/HSlider" to="settings" method="_on_click_slider_value_changed"]
 [connection signal="value_changed" from="settings/VBoxContainer2/HBoxContainer_Amb/HSlider" to="settings" method="_on_amb_slider_value_changed"]

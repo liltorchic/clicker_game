@@ -9,6 +9,15 @@ var discount_data:Label
 var container_100k:HBoxContainer
 var container_discount:HBoxContainer
 
+@onready var shop_window_target = $"../../../../shop"
+
+func _on_button_pressed() -> void:
+	shop_window_target.visible = true 
+
+
+func _on_button_back_pressed() -> void:
+	shop_window_target.visible = false
+
 func _ready() -> void:
 	lives_label_data = get_node("container_lives_hor/Label_Lives_num")
 	lives_label_data.text = ""

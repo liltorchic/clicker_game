@@ -1,7 +1,7 @@
 extends ColorRect
 
-@onready var distractions_target = $"../../../../ColorRect/ScrollContainer/distractions"
-@onready var shop_target = $ScrollContainer/GridContainer
+@onready var distractions_target = %distractions
+@onready var shop_target = $MarginContainer/ScrollContainer/GridContainer
 
 @onready var shop_item_template =  preload("res://scenes/shop_item.tscn")
 @onready var _distraction_clicker = preload("res://scenes/distractions/distraction_clicker.tscn")
