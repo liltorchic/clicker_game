@@ -2,7 +2,7 @@ extends MarginContainer
 class_name SaveEntry
 
 @onready var save_title_label:Label = $HBoxContainer/VBoxContainer/HBoxContainer_save_title/Label_save_data
-@onready var save_score_label:Label = $HBoxContainer/VBoxContainer/HBoxContainer_save_title/Label_save_data
+@onready var save_score_label:Label = $HBoxContainer/VBoxContainer/HBoxContainer_save_stat_points/Label_save_stat_points_data
 
 var filename:String
 

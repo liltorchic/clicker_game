@@ -16,7 +16,6 @@ grow_vertical = 2
 script = ExtResource("1_klgdb")
 
 [node name="menu" type="VBoxContainer" parent="." unique_id=1295916543]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -185,6 +184,7 @@ layout_mode = 2
 text = "back"
 
 [node name="load" type="VBoxContainer" parent="." unique_id=1750396963]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
