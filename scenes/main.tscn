@@ -201,6 +201,7 @@ size_flags_stretch_ratio = 3.8
 color = Color(0.454524, 0.454524, 0.454524, 1)
 
 [node name="brain_texture" type="TextureRect" parent="game/HBoxContainer/ColorRect" unique_id=865440646]
+visible = false
 y_sort_enabled = true
 texture_filter = 3
 layout_mode = 1
@@ -218,6 +219,7 @@ stretch_mode = 1
 script = ExtResource("3_tefeu")
 
 [node name="AudioStreamPlayer2D_A" type="AudioStreamPlayer2D" parent="game/HBoxContainer/ColorRect/brain_texture" unique_id=2050197586]
+visible = false
 stream = ExtResource("4_o6xl0")
 bus = &"SFX"
 

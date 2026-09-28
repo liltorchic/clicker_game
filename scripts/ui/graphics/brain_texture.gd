@@ -29,7 +29,9 @@ func _process(delta: float) -> void:
 	# --- sfx ---
 	if heartbeat > heartbeat_threshold and not heartbeat_triggered:
 		heartbeat_triggered = true
-		AudioStreamA.play()
+		# pause sound if graphic is not visible
+		if self.visible:
+			AudioStreamA.play()
 	elif heartbeat < heartbeat_threshold:
 		heartbeat_triggered = false
 	

@@ -162,6 +162,16 @@ func _game_loaded():
 		load_game()
 	else:
 		print("creating new game")
+		# reset variables
+		time_points = 1000000 if Constants.dev else 0
+		isDataUnlocked = false
+		cumlative_points = 0
+		cumlative_points_rollover = 0
+		base_mult = 0.0 
+		multiplier = 1
+		hundredkprogess = 0
+		discount = 1.000
+		lives = Constants.starting_lives
 		
 		
 
