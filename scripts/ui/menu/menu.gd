@@ -95,6 +95,11 @@ func _on_option_button_item_selected(index: int) -> void:
 
 #open save folder
 func _on_button_savefldr_pressed() -> void:
+	var dir = DirAccess.open("user://")
+	if dir:
+		if not dir.dir_exists("saves"):
+			dir.make_dir("saves")
+			
 	OS.shell_open(ProjectSettings.globalize_path("user://saves"))
 
 
