@@ -7,7 +7,6 @@ custom_minimum_size = Vector2(128, 128)
 script = ExtResource("1_6jgap")
 
 [node name="Button" type="Button" parent="." unique_id=462714118]
-layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -15,11 +14,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -55.0
-offset_top = 9.785
+offset_top = 9.785004
 offset_right = 55.0
-offset_bottom = 40.785
+offset_bottom = 40.785004
 grow_horizontal = 2
 grow_vertical = 2
+layout_direction = 1
 text = "click"
 
 [node name="clicker" type="Label" parent="." unique_id=580514470]

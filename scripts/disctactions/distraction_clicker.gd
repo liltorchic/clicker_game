@@ -150,10 +150,6 @@ func upgrade_4():
 		return true
 	else:
 		return false
-		
-
-
-
 
 #save/load
 
