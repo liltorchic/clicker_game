@@ -10,7 +10,7 @@ var button:Button
 
 var isChecked
 var modifier = 2
-var lastvalue #presumed ticker length
+var lastvalue = 10 #presumed ticker length
 var alarmtriggered
 
 var initcount = 10

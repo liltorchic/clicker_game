@@ -157,7 +157,7 @@ func upgrade_4():
 
 #only calls when loading from save
 func _upgrade_ui_loaded():
-	upgrade_reference.update_price_labels()
+	#upgrade_reference.update_price_labels()
 	if(self.upgrade_level_3_level >= 1):
 		self.upgrade_reference.upgrade_3_button.disabled = true
 		self.upgrade_reference.upgrade_3_price.text = "out of stock"

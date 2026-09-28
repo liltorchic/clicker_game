@@ -20,11 +20,9 @@ var config = ConfigFile.new()
 
 
 func _process(_delta: float) -> void:
-	#($menu/CenterContainer5/Button_delete_save as Button).disabled = not FileAccess.file_exists("user://save_json.json")
-	($menu/CenterContainer2/Button_load as Button).disabled = not FileAccess.file_exists("user://save_json.json")
+	pass
 	
-#### menu buttons ####
-
+										#### menu buttons ####
 # new game
 func _on_button_new_pressed() -> void:
 	Game.is_new_game = true
@@ -34,10 +32,7 @@ func _on_button_new_pressed() -> void:
 func _on_button_load_pressed() -> void:
 	$menu.visible = false
 	$load.visible = true
-	#load
-	#Game.is_new_game = false
-	#get_tree().change_scene_to_file("res://scenes/main.tscn")
-
+	
 # settings
 func _on_button_settings_pressed() -> void:
 	$menu.visible = false
@@ -54,12 +49,7 @@ func _on_button_pressed_back() -> void:
 	$menu.visible = true
 	
 
-func _ready() -> void:
-	#($menu/CenterContainer5/Button_delete_save as Button).disabled = not FileAccess.file_exists("user://save_json.json")
-	
-	# disable load button if no save file exists
-	($menu/CenterContainer2/Button_load as Button).disabled = not FileAccess.file_exists("user://save_json.json")
-		
+func _ready() -> void:	
 	# disable window options if runing in editor	
 	if Engine.is_embedded_in_editor():
 		window_options.disabled = true
@@ -99,7 +89,7 @@ func _on_option_button_item_selected(index: int) -> void:
 
 #open save folder
 func _on_button_savefldr_pressed() -> void:
-	OS.shell_open(ProjectSettings.globalize_path("user://"))
+	OS.shell_open(ProjectSettings.globalize_path("user://saves"))
 
 
 func _on_music_slider_value_changed(value: float) -> void:

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cqxc2drno5j8p"]
+
+[ext_resource type="Script" uid="uid://bgrdsguh0dr0c" path="res://scripts/ui/menu/save_game_entry.gd" id="1_4x144"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oe5h4"]
+
+[node name="MarginContainer" type="MarginContainer" unique_id=2106888897]
+custom_minimum_size = Vector2(13.72, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4x144")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1489468293]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=803483981]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=618500897]
+layout_mode = 2
+
+[node name="HBoxContainer_save_title" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1646312436]
+layout_mode = 2
+
+[node name="Label_save_title" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer_save_title" unique_id=1857679737]
+layout_mode = 2
+text = "save "
+
+[node name="Label_save_data" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer_save_title" unique_id=1042567802]
+layout_mode = 2
+text = "###"
+
+[node name="HBoxContainer_save_stat_points" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1158980066]
+layout_mode = 2
+
+[node name="Label_save_stat_points_title" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer_save_stat_points" unique_id=1280026808]
+layout_mode = 2
+text = "pts"
+
+[node name="Label_save_stat_points_data" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer_save_stat_points" unique_id=602290819]
+layout_mode = 2
+text = "###"
+
+[node name="Button_Delete" type="Button" parent="HBoxContainer" unique_id=1459122163]
+layout_mode = 2
+text = "delete"
+
+[node name="Button_Load" type="Button" parent="." unique_id=967061661]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oe5h4")
+
+[connection signal="pressed" from="HBoxContainer/Button_Delete" to="." method="_on_button_delete_pressed"]
+[connection signal="pressed" from="Button_Load" to="." method="_on_button_pressed"]

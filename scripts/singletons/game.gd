@@ -1,6 +1,7 @@
 extends Node
 
 var is_new_game: bool = true
+var game_save_index:int
 
 #game stats
 var time_points:float = 1000000 if Constants.dev else 0
@@ -40,6 +41,7 @@ var linked_async_shop_item_timer_defuse
 
 func _ready() -> void:
 	game_loaded.connect(_game_loaded)
+	
 	#register signals to alert when shop items are loaded and initilized
 	shop_item_clicker_loaded.connect(_shop_item_clicker_loaded)
 	shop_item_pet_loaded.connect(_shop_item_pet_loaded)
@@ -113,14 +115,19 @@ func doDiscountUpdate():
 		label.text = "out of stock"
 		
 
-const SAVE_PATH = "user://save_json.json"
+#const SAVE_PATH = "user://saves/save_json.json"
+
 
 func save_game() -> void:
 #bowsers contribution
 #	;l.
 #0 1
 	var stats_node:  = get_node("/root/Control/game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver")
-	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	
+	# calculate what save file to save into
+	var savegame_file = Constants.SAVE_PATH + "save_game_" + str(game_save_index) + ".json"
+	
+	var file := FileAccess.open(savegame_file, FileAccess.WRITE)
 
 	var stats := stats_node
 	# JSON doesn't support many of Godot's types such as Vector2.
@@ -136,6 +143,7 @@ func save_game() -> void:
 			hundredkprogess = var_to_str(hundredkprogess),
 			discount = var_to_str(discount),
 			lives = var_to_str(lives),
+			game_save_index = var_to_str(game_save_index)
 		},
 		distractionz = [],
 		shopItemz = [],
@@ -153,15 +161,34 @@ func save_game() -> void:
 		save_dict.shopItemz.push_back({
 			data = s.getSaveData(),
 		})
+		
+	
 
 	file.store_line(JSON.stringify(save_dict))
 
+# game loaded ready callback
 func _game_loaded():
+	var _save_files_index = 0
+	
 	if !is_new_game:
 		print("loading saved game")
-		load_game()
+		#load_game updates save file index to save into correct file
+		load_game(game_save_index)
 	else:
 		print("creating new game")
+		
+		# count how many save files exist
+		if DirAccess.dir_exists_absolute(Constants.SAVE_PATH):
+			var files = DirAccess.get_files_at(Constants.SAVE_PATH)
+			for file in files:
+				_save_files_index += 1
+		else:
+			printerr("Directory does not exist: ", Constants.SAVE_PATH)
+		
+		#increment save file inxed to save into new file
+		game_save_index = _save_files_index + 1
+		
+		
 		# reset variables
 		time_points = 1000000 if Constants.dev else 0
 		isDataUnlocked = false
@@ -175,8 +202,9 @@ func _game_loaded():
 		
 		
 
-func load_game() -> void:
-	var file := FileAccess.open(SAVE_PATH, FileAccess.READ)
+func load_game(save_index:int) -> void:
+	var savegame_file = Constants.SAVE_PATH + "save_game_" + str(save_index) + ".json"
+	var file := FileAccess.open(savegame_file, FileAccess.READ)
 	#if there is no save file
 	if(file == null):
 		return
@@ -192,6 +220,7 @@ func load_game() -> void:
 	var _distraction_ticker = preload("res://scenes/distractions/distraction_ticker.tscn")
 	var _distraction_timer_button = preload("res://scenes/distractions/distraction_timer_button.tscn")
 	var _distraction_timer_suprise = preload("res://scenes/distractions/distraction_timer_suprise.tscn")
+	
 	# Remove existing objects before adding new ones.
 	get_tree().call_group("distraction", "queue_free")
 	get_tree().call_group("upgradeItem", "queue_free")
@@ -207,6 +236,7 @@ func load_game() -> void:
 	lives = str_to_var(save_dict.stats.lives)
 	multiplier = str_to_var(save_dict.stats.multiplier)
 	isDataUnlocked = str_to_var(save_dict.stats.isDataUnlocked)
+	game_save_index = str_to_var(save_dict.stats.game_save_index)
 
 #for every saved distraction
 	for distract: Dictionary in save_dict.distractionz:
@@ -247,6 +277,7 @@ func load_game() -> void:
 			linked_async_shop_item_timer_button.loadSaveData(shopies.data.stats)
 		elif(str_to_var(shopies.data.stats.id) == "bomb"):
 			linked_async_shop_item_timer_defuse.loadSaveData(shopies.data.stats)
+	
 		
 		
 func _shop_item_clicker_loaded(node_reference):

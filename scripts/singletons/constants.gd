@@ -1,5 +1,6 @@
 extends Node
 
+const SAVE_PATH = "user://saves/"
 
 const starting_lives = 10
 const base_multiplier:float = 1.0
