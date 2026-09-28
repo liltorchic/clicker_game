@@ -116,8 +116,9 @@ func doDiscountUpdate():
 const SAVE_PATH = "user://save_json.json"
 
 func save_game() -> void:
-	
-
+#bowsers contribution
+#	;l.
+#0 1
 	var stats_node:  = get_node("/root/Control/game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver")
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 

@@ -47,8 +47,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ColorRect" type="ColorRect" parent="game/HBoxContainer/VBoxContainer_UI" unique_id=395798485]
-clip_contents = true
 custom_minimum_size = Vector2(256, 256)
+clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
 

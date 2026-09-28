@@ -209,7 +209,6 @@ text = "back"
 
 [node name="menu_music" type="AudioStreamPlayer" parent="." unique_id=1232266364]
 stream = ExtResource("2_mcvr8")
-autoplay = true
 bus = &"Music"
 parameters/looping = true
 
