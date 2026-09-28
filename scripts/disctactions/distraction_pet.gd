@@ -13,7 +13,7 @@ var last_reward:float = 0
 var interval = 1
 
 func present_init_upgrade_data():
-	self.upgrade_level_1_title = "Amount"
+	self.upgrade_level_1_title = "Size"
 	self.upgrade_level_1_desc = "+1"
 	self.upgrade_level_1_price = 500
 	self.upgrade_level_1_price_increase = 1.55
@@ -25,14 +25,14 @@ func present_init_upgrade_data():
 	self.upgrade_level_2_price_increase = 2
 	self.upgrade_level_2_level_string = "0"
 	
-	self.upgrade_level_3_title = "Love"
-	self.upgrade_level_3_desc = "how much you love your pet"
+	self.upgrade_level_3_title = "nutrition"
+	self.upgrade_level_3_desc = "feed the colony"
 	self.upgrade_level_3_price = 60
 	self.upgrade_level_3_price_increase = 1.225
 	self.upgrade_level_3_level_string = "0"
 	
-	self.upgrade_level_4_title = "Torture"
-	self.upgrade_level_4_desc = "hurt it to make it behave"
+	self.upgrade_level_4_title = "antibiotics"
+	self.upgrade_level_4_desc = "can be toxic at high levels"
 	self.upgrade_level_4_price = 10
 	self.upgrade_level_4_price_increase = 1.115
 	self.upgrade_level_4_level_string = "0"
