@@ -37,6 +37,7 @@ func present_init_upgrade_data():
 func _ready() -> void:
 	button = get_node("Button")
 	label = get_node("clicker")
+	
 	timer_autoclicker = get_node("Timer_Autoclick")
 	Game.data_purchased.connect(update_labels)
 	upgrade_ui_loaded.connect(_upgrade_ui_loaded)
@@ -53,7 +54,8 @@ func _ready() -> void:
 		self.upgrade_reference = u
 		
 	if(loading_from_save):
-		self.timer_autoclicker.start(0.1)
+		if(auto):
+			self.timer_autoclicker.start(0.1)
 		
 #run when instancing item before adding it to the scene
 func init() -> void:
