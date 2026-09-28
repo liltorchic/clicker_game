@@ -50,6 +50,12 @@ func _on_button_pressed_back() -> void:
 	
 
 func _ready() -> void:	
+	
+	var dir = DirAccess.open("user://")
+	if dir:
+		if not dir.dir_exists("saves"):
+			dir.make_dir("saves")
+	
 	# disable window options if runing in editor	
 	if Engine.is_embedded_in_editor():
 		window_options.disabled = true

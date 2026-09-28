@@ -182,8 +182,6 @@ func _game_loaded():
 			var files = DirAccess.get_files_at(Constants.SAVE_PATH)
 			for file in files:
 				_save_files_index += 1
-		else:
-			printerr("Directory does not exist: ", Constants.SAVE_PATH)
 		
 		#increment save file inxed to save into new file
 		game_save_index = _save_files_index + 1
