@@ -51,6 +51,9 @@ func _on_button_pressed_back() -> void:
 
 func _ready() -> void:	
 	
+	var texture = load("res://textures/badtitle.png")
+	$menu/TextureRect.texture = texture
+	
 	var dir = DirAccess.open("user://")
 	if dir:
 		if not dir.dir_exists("saves"):
