@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://bfk4sxkvl3rvm"]
 
 [ext_resource type="Script" uid="uid://bi04ch65dfyld" path="res://scripts/ui/menu/menu.gd" id="1_klgdb"]
+[ext_resource type="Texture2D" uid="uid://dhp8ar64lp4k6" path="res://textures/badtitle.png" id="2_037ec"]
 [ext_resource type="Script" uid="uid://casj0pi7koplp" path="res://scripts/ui/menu/save_game_list.gd" id="2_e0arn"]
 [ext_resource type="AudioStream" uid="uid://dxpv4y3o28x8" path="res://sounds/project_20.ogg" id="2_mcvr8"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y1u3h"]
 
 [node name="Menu" type="Control" unique_id=1643053398]
 layout_mode = 3
@@ -32,7 +31,7 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="menu" unique_id=492687953]
 custom_minimum_size = Vector2(400, 150)
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_y1u3h")
+texture = ExtResource("2_037ec")
 stretch_mode = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="menu" unique_id=353041849]
