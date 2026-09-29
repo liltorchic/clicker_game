@@ -143,7 +143,7 @@ func upgrade_4():
 		self.upgrade_level_4_price = upgrade_level_4_price * Game.discount * upgrade_level_4_price_increase
 		self.upgrade_level_4_level = upgrade_level_4_level + 1
 		#upgrade
-		self.autofreq = self.autofreq / 2
+		self.autofreq /=  2
 		if(upgrade_level_4_level >= 4):
 			self.upgrade_level_4_disabled = true
 		update_labels()

@@ -1,9 +1,6 @@
 bugs
 ----------
 multiplier data field should be item multiplier instead of upgrade count
-clicking on button text blocks button press detection
-
-
 
 
 balance ideas
