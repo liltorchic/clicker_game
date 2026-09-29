@@ -10,16 +10,16 @@ var button:Button
 
 var isChecked
 var modifier = 2
-var lastvalue = 10 #presumed ticker length
+var lastvalue = 100
 var alarmtriggered
 
-var initcount = 10
+var initcount = 100
 
 func present_init_upgrade_data():
 	self.upgrade_level_1_title = "Amount"
-	self.upgrade_level_1_desc = "+1"
+	self.upgrade_level_1_desc = "+3"
 	self.upgrade_level_1_price = 1500
-	self.upgrade_level_1_price_increase = 1.25
+	self.upgrade_level_1_price_increase = 1.20
 	self.upgrade_level_1_level_string = "0"
 	
 	self.upgrade_level_2_title = "multiplier"
@@ -87,7 +87,7 @@ func upgrade_1():
 		self.upgrade_level_1_level = upgrade_level_1_level + 1
 		
 		#upgrade
-		self.amount += 1
+		self.amount += 3
 		update_labels()
 		return true
 	else:

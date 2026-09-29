@@ -16,7 +16,7 @@ var timer_rng_upper:int = 12
 
 func present_init_upgrade_data():
 	self.upgrade_level_1_title = "amount"
-	self.upgrade_level_1_desc = "+1"
+	self.upgrade_level_1_desc = "+10"
 	self.upgrade_level_1_price = 100
 	self.upgrade_level_1_price_increase = 1.5
 	self.upgrade_level_1_level_string = "0"
@@ -88,7 +88,7 @@ func upgrade_1():
 		self.upgrade_level_1_level = upgrade_level_1_level + 1
 		
 		#upgrade
-		self.amount += 1
+		self.amount += 10
 		update_labels()
 		return true
 	else:

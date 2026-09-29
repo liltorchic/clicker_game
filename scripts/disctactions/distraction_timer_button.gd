@@ -4,10 +4,11 @@ var label:Label
 var scorer:Timer
 var button:Button
 var timer_length:float = 10
+var scorer_increment = 1
 
 func present_init_upgrade_data():
 	self.upgrade_level_1_title = "click amount"
-	self.upgrade_level_1_desc = "+1"
+	self.upgrade_level_1_desc = "+2"
 	self.upgrade_level_1_price = 100
 	self.upgrade_level_1_price_increase = 3
 	self.upgrade_level_1_level_string = "0"
@@ -24,11 +25,11 @@ func present_init_upgrade_data():
 	self.upgrade_level_3_price_increase = 1.25
 	self.upgrade_level_3_level_string = "0"
 	
-	self.upgrade_level_4_title = "alarm"
-	self.upgrade_level_4_desc = "get an alarm"
-	self.upgrade_level_4_price = 100000
-	self.upgrade_level_4_one_time = true
-	self.upgrade_level_4_level_string = "available"
+	self.upgrade_level_4_title = "score frequency"
+	self.upgrade_level_4_desc = "66% faster"
+	self.upgrade_level_4_price = 2500
+	self.upgrade_level_4_price_increase = 3
+	self.upgrade_level_4_level_string = "0"
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -58,13 +59,14 @@ func _ready() -> void:
 func init() -> void:
 	self.title = "timer"
 	self.price = 100
-	self.amount = 1
+	self.amount = 8
+	self.scorer_increment = 1
 	
 func update_labels():
 	self.upgrade_level_1_level_string = str(upgrade_level_1_level)
 	self.upgrade_level_2_level_string = str(upgrade_level_2_level)
 	self.upgrade_level_3_level_string = str(upgrade_level_3_level)
-	self.upgrade_level_4_level_string = "purchased" if upgrade_level_4_level == 1 else "available"
+	self.upgrade_level_4_level_string = str(upgrade_level_4_level) if upgrade_level_4_level < 3 else "max"
 	
 #Amount
 func upgrade_1():
@@ -74,7 +76,7 @@ func upgrade_1():
 		self.upgrade_level_1_level = upgrade_level_1_level + 1
 		
 		#upgrade
-		self.amount += 1
+		self.amount += 2
 		update_labels()
 		return true
 	else:
@@ -94,7 +96,7 @@ func upgrade_2():
 	else:
 		return false
 
-#alarm	
+#tick amount
 func upgrade_3():
 	if(self.upgrade_level_3_price * Game.discount <= Game.get_points()):
 		Game.remove_time_points(upgrade_level_3_price * Game.discount)
@@ -108,15 +110,18 @@ func upgrade_3():
 	else:
 		return false
 
-#tick amount
+#freq
 func upgrade_4():
 	if(self.upgrade_level_4_price * Game.discount <= Game.get_points()):
 		Game.remove_time_points(upgrade_level_4_price * Game.discount)
 		self.upgrade_level_4_price = upgrade_level_4_price * Game.discount * upgrade_level_4_price_increase
 		self.upgrade_level_4_level = upgrade_level_4_level + 1
-		#upgrade
-		print("alarm is set to true")
-		self.alarm = true
+		
+		if(upgrade_level_4_level >= 6):
+			self.upgrade_level_4_disabled = true
+			
+		scorer_increment *= .66
+		scorer.start(scorer_increment)
 		update_labels()
 		return true
 	else:
@@ -128,35 +133,22 @@ func _on_timer_timeout() -> void:
 	scorer.stop()
 	label.text = "0.00"
 	Game.remove_life()
-	alarmlogic()
 	print("simple timer timeout")
 
 #reset button
 func _on_button_pressed() -> void:
 	timer.start(timer_length)
-	scorer.start(1)
+	scorer.start(scorer_increment)
 	self.color = Color(1.0, 1.0, 1.0, 1.0)
 	
 func _on_timer_scorer_timeout() -> void:
 	var reward = self.amount * (Game.get_multiplier() + self.mult)
-	scorer.start(1)
+	scorer.start(scorer_increment)
 	particle_tree = p.instantiate()
 	add_child(particle_tree)
-	particle_tree.emit_speed(reward ,1.0,.02)
+	particle_tree.emit_speed(reward, 1.0, .02)
 	Game.add_time_points(reward)
-	alarmlogic()
 	
-	
-
-func alarmlogic():
-	if(self.alarm):
-		var g = round(timer.time_left) / round(timer_length)
-		if(g < 0.1):
-			self.color = Color(0.452, 0.0, 0.082, 1.0)
-		elif(g < 0.2):
-			self.color = Color(1.0, 0.18, 0.18, 1.0)
-		elif(g < 0.3):
-			self.color = Color(1.0, 0.47, 0.47, 1.0)
 	
 func _on_gui_input(event: InputEvent) -> void:
 	if not self.UI_MODE:
@@ -176,6 +168,7 @@ func getSaveData() -> Dictionary:
 			mult = var_to_str(self.mult),
 			alarm = var_to_str(self.alarm),
 			timer_length = var_to_str(self.timer_length),
+			scorer_increment = var_to_str(self.scorer_increment),
 			upgrade_level_1_desc = var_to_str(self.upgrade_level_1_desc),
 			upgrade_level_1_disabled = var_to_str(self.upgrade_level_1_disabled),
 			upgrade_level_1_level = var_to_str(self.upgrade_level_1_level),
@@ -223,6 +216,7 @@ func loadSaveData():
 	self.mult = str_to_var(savedata.mult)
 	self.alarm = str_to_var(savedata.alarm)
 	self.timer_length = str_to_var(savedata.timer_length)
+	self.scorer_increment = str_to_var(savedata.scorer_increment)
 	self.upgrade_level_1_desc = str_to_var(savedata.upgrade_level_1_desc)
 	self.upgrade_level_1_disabled = str_to_var(savedata.upgrade_level_1_disabled)
 	self.upgrade_level_1_level = str_to_var(savedata.upgrade_level_1_level)
