@@ -15,7 +15,7 @@ func set_index(_filename:String):
 	var savegame_file = Constants.SAVE_PATH + _filename
 	var file := FileAccess.open(savegame_file, FileAccess.READ)
 	
-	#if there is no save file
+	#if no save file exists on disk
 	if(file == null):
 		return
 	
@@ -28,13 +28,13 @@ func set_index(_filename:String):
 	save_title_label.text = save_dict.stats.game_save_index
 	save_score_label.text = save_dict.stats.time_points
 	
-# load save
+# load save button signal endpoint
 func _on_button_pressed() -> void:
 	Game.is_new_game = false
 	Game.game_save_index = int(filename.replace("save_game_", "").replace(".json", ""))
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
-# delete
+# delete save button signal endpoint
 func _on_button_delete_pressed() -> void:
 	DirAccess.remove_absolute(Constants.SAVE_PATH + filename)
 	# send deleted signal so parent can dynamically reload the save list

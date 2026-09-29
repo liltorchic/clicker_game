@@ -95,15 +95,18 @@ func recalc_price(_in:float) -> float:
 
 func add_base_mult(_in:float):
 	base_mult += _in
-	
+
+# 
 func set_selected(_in):
 	selected = _in
 	updated_selected.emit()
-	
+
+# called to apply visibility upgrade
 func doDataUpdate():
 	isDataUnlocked = true
 	data_purchased.emit()
-	
+
+# called to apply discount upgrade
 func doDiscountUpdate():
 	if(discount - 0.01 > 0):
 		discount -= 0.01
@@ -113,18 +116,15 @@ func doDiscountUpdate():
 		var label:Label = %Label_Price_data_upgrade
 		button.disabled = true
 		label.text = "out of stock"
-		
 
-#const SAVE_PATH = "user://saves/save_json.json"
-
-
+# gather and save game data to predesignated slot
 func save_game() -> void:
-#bowsers contribution
-#	;l.
-#0 1
+	# my cat bowsers contribution
+	#	;l.
+	#0 1
 	var stats_node:  = get_node("/root/Control/game/HBoxContainer/VBoxContainer_UI/ColorRect/container_scorer_ver")
 	
-	# calculate what save file to save into
+	# calculate what save file to save into based on the given index
 	var savegame_file = Constants.SAVE_PATH + "save_game_" + str(game_save_index) + ".json"
 	
 	var file := FileAccess.open(savegame_file, FileAccess.WRITE)
@@ -162,31 +162,43 @@ func save_game() -> void:
 			data = s.getSaveData(),
 		})
 		
-	
-
 	file.store_line(JSON.stringify(save_dict))
 
 # game loaded ready callback
 func _game_loaded():
-	var _save_files_index = 0
-	
+	# loading saved game
 	if !is_new_game:
 		print("loading saved game")
-		#load_game updates save file index to save into correct file
+		#load_game updates save file index to save into correct slot
 		load_game(game_save_index)
+	# new game in new slot
 	else:
-		print("creating new game")
-		
-		# count how many save files exist
+		#if save path exists
 		if DirAccess.dir_exists_absolute(Constants.SAVE_PATH):
-			var files = DirAccess.get_files_at(Constants.SAVE_PATH)
-			for file in files:
-				_save_files_index += 1
-		
-		#increment save file inxed to save into new file
-		game_save_index = _save_files_index + 1
-		
-		
+			var directory = DirAccess.get_files_at(Constants.SAVE_PATH)
+			# if there are at least 1 save file
+			if (directory.size() > 0):
+				var _savedict = []
+				var _save_slot_counter = 1
+				
+				# get list of occupied save slots with save number
+				for saves in directory:
+					_savedict.append(int(saves.replace("save_game_", "").replace(".json", "")))
+				
+				# find smallest empty save slot
+				while(true):
+					if _savedict.has(_save_slot_counter):
+						_save_slot_counter += 1
+					else:
+						game_save_index = _save_slot_counter
+						print("saving to slot " + str(game_save_index))
+						break
+			else:
+				game_save_index = 1
+				print("no save slots used so saving to slot 1")	
+		else:
+			printerr("FAILED TO SAVE GAME - dir_exists_absolute - " + str(Constants.SAVE_PATH))
+
 		# reset variables
 		time_points = 1000000 if Constants.dev else 0
 		isDataUnlocked = false
@@ -197,13 +209,13 @@ func _game_loaded():
 		hundredkprogess = 0
 		discount = 1.000
 		lives = Constants.starting_lives
-		
-		
 
+# load save data from designated slot into game instance and instantiate saved nodes
 func load_game(save_index:int) -> void:
 	var savegame_file = Constants.SAVE_PATH + "save_game_" + str(save_index) + ".json"
 	var file := FileAccess.open(savegame_file, FileAccess.READ)
-	#if there is no save file
+	
+	# if there is no save file
 	if(file == null):
 		return
 	
@@ -212,7 +224,7 @@ func load_game(save_index:int) -> void:
 	var save_dict := json.get_data() as Dictionary
 	var distraction_target = get_tree().get_first_node_in_group("distraction_target")
 
-	#preload assets
+	# preload assets
 	var _distraction_clicker = preload("res://scenes/distractions/distraction_clicker.tscn")
 	var _distraction_pet = preload("res://scenes/distractions/distraction_pet.tscn")
 	var _distraction_ticker = preload("res://scenes/distractions/distraction_ticker.tscn")
@@ -222,9 +234,8 @@ func load_game(save_index:int) -> void:
 	# Remove existing objects before adding new ones.
 	get_tree().call_group("distraction", "queue_free")
 	get_tree().call_group("upgradeItem", "queue_free")
-	#get_tree().call_group("shopItem", "queue_free")
 	
-	#populate game data
+	# populate game data
 	time_points = str_to_var(save_dict.stats.time_points)
 	cumlative_points = str_to_var(save_dict.stats.cumlative_points)
 	cumlative_points_rollover = str_to_var(save_dict.stats.cumlative_points_rollover)
@@ -275,9 +286,8 @@ func load_game(save_index:int) -> void:
 			linked_async_shop_item_timer_button.loadSaveData(shopies.data.stats)
 		elif(str_to_var(shopies.data.stats.id) == "bomb"):
 			linked_async_shop_item_timer_defuse.loadSaveData(shopies.data.stats)
+
 	
-		
-		
 func _shop_item_clicker_loaded(node_reference):
 	linked_async_shop_item_clicker = node_reference
 	
