@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://dmab5sthll2kw"]
 
-[ext_resource type="Texture2D" uid="uid://ctj4tc3mdt4ca" path="res://textures/brain1.png" id="2_tbgi4"]
-[ext_resource type="Script" uid="uid://ddqd6x68oc8ca" path="res://scripts/ui/graphics/brain_texture.gd" id="3_tefeu"]
 [ext_resource type="Script" uid="uid://cvbafd8qkfu7x" path="res://scripts/ui/pause_settings_ui.gd" id="4_jyhfs"]
-[ext_resource type="AudioStream" uid="uid://c5q2rhhtkoe6k" path="res://sounds/beat.wav" id="4_o6xl0"]
 [ext_resource type="Script" uid="uid://jvp8yk25jfnw" path="res://scripts/ui/ui_vbox_container_score.gd" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://coqm2j3xd3wot" path="res://scenes/upgrade_item_base.tscn" id="5_tefeu"]
 [ext_resource type="Script" uid="uid://d21fc0y6shsto" path="res://scripts/ui/ui_shop.gd" id="7_o6xl0"]
@@ -199,29 +196,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.8
 color = Color(0.454524, 0.454524, 0.454524, 1)
-
-[node name="brain_texture" type="TextureRect" parent="game/HBoxContainer/ColorRect" unique_id=865440646]
-visible = false
-y_sort_enabled = true
-texture_filter = 3
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2.41, 2.41)
-pivot_offset = Vector2(300, 600)
-mouse_filter = 2
-texture = ExtResource("2_tbgi4")
-expand_mode = 1
-stretch_mode = 1
-script = ExtResource("3_tefeu")
-
-[node name="AudioStreamPlayer2D_A" type="AudioStreamPlayer2D" parent="game/HBoxContainer/ColorRect/brain_texture" unique_id=2050197586]
-visible = false
-stream = ExtResource("4_o6xl0")
-bus = &"SFX"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="game/HBoxContainer/ColorRect" unique_id=778730147]
 layout_mode = 1
