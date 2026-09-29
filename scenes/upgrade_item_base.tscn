@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://coqm2j3xd3wot"]
+[gd_scene format=3 uid="uid://coqm2j3xd3wot"]
 
 [ext_resource type="Script" uid="uid://gomsi6il8re2" path="res://scripts/ui/ui_upgrade_item_main.gd" id="1_teimk"]
 
-[node name="UpgradeItemMain" type="Control"]
+[node name="UpgradeItemMain" type="Control" unique_id=1915669003]
 custom_minimum_size = Vector2(145, 180)
 layout_mode = 3
 anchors_preset = 10
@@ -12,7 +12,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 2
 script = ExtResource("1_teimk")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1704311167]
 custom_minimum_size = Vector2(145, 180)
 layout_mode = 1
 anchors_preset = 15
@@ -20,9 +20,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.589096, 0.589096, 0.589096, 1)
+color = Color(0.7057726, 0.4639371, 0.77863, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=2144371323]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -36,182 +36,182 @@ offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label_Title" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="Label_Title" type="Label" parent="ColorRect/VBoxContainer" unique_id=885473396]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 30
 text = "Main Upgrades"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=13252252]
 layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.6
 
-[node name="upgrade_1" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+[node name="upgrade_1" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1196395643]
 layout_mode = 2
 
-[node name="Label_upgrade" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1"]
+[node name="Label_upgrade" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1" unique_id=398830820]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 20
 text = "Multiplier"
 
-[node name="Label_description" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1"]
+[node name="Label_description" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1" unique_id=2034192777]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 13
 text = "+ 0.1x
 "
 
-[node name="level" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1"]
+[node name="level" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1" unique_id=717364694]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1/level"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1/level" unique_id=356346022]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.423651, 0.423651, 0.423651, 1)
 text = "0/"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1" unique_id=830269584]
 layout_mode = 2
 
-[node name="Label_Price" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1/HBoxContainer"]
+[node name="Label_Price" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1/HBoxContainer" unique_id=524264744]
 layout_mode = 2
 size_flags_horizontal = 2
 text = "price"
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1/HBoxContainer"]
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_1/HBoxContainer" unique_id=1128939701]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 text = "buy"
 
-[node name="VSeparator" type="VSeparator" parent="ColorRect/VBoxContainer/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1446133265]
 layout_mode = 2
 
-[node name="upgrade_2" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+[node name="upgrade_2" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1656662404]
 layout_mode = 2
 
-[node name="Label_upgrade" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2"]
+[node name="Label_upgrade" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2" unique_id=1102560203]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 20
 text = "Lives"
 
-[node name="Label_description" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2"]
+[node name="Label_description" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2" unique_id=1861204692]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 13
 text = "+ 1
 "
 
-[node name="level" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2"]
+[node name="level" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2" unique_id=331607156]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2/level"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2/level" unique_id=755762088]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.423651, 0.423651, 0.423651, 1)
 text = "0/"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2" unique_id=1771014635]
 layout_mode = 2
 
-[node name="Label_Price" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2/HBoxContainer"]
+[node name="Label_Price" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2/HBoxContainer" unique_id=979757545]
 layout_mode = 2
 size_flags_horizontal = 2
 text = "price"
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2/HBoxContainer"]
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_2/HBoxContainer" unique_id=946371996]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 text = "buy"
 
-[node name="VSeparator2" type="VSeparator" parent="ColorRect/VBoxContainer/HBoxContainer"]
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1681980982]
 layout_mode = 2
 
-[node name="upgrade_3" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+[node name="upgrade_3" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=312529766]
 layout_mode = 2
 
-[node name="Label_upgrade" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3"]
+[node name="Label_upgrade" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3" unique_id=185310799]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 20
 text = "Data"
 
-[node name="Label_description" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3"]
+[node name="Label_description" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3" unique_id=1869990809]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 13
 text = "view details
 "
 
-[node name="level" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3"]
+[node name="level" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3" unique_id=1677104122]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3/level"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3/level" unique_id=770673725]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.423651, 0.423651, 0.423651, 1)
 text = "0/"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3" unique_id=1549215589]
 layout_mode = 2
 
-[node name="Label_Price" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3/HBoxContainer"]
+[node name="Label_Price" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3/HBoxContainer" unique_id=426401073]
 layout_mode = 2
 size_flags_horizontal = 2
 text = "price"
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3/HBoxContainer"]
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_3/HBoxContainer" unique_id=47617577]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 text = "buy"
 
-[node name="VSeparator3" type="VSeparator" parent="ColorRect/VBoxContainer/HBoxContainer"]
+[node name="VSeparator3" type="VSeparator" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1906778626]
 layout_mode = 2
 
-[node name="upgrade_4" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+[node name="upgrade_4" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=869761668]
 layout_mode = 2
 
-[node name="Label_upgrade" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4"]
+[node name="Label_upgrade" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4" unique_id=497059223]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 20
 text = "discount"
 
-[node name="Label_description" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4"]
+[node name="Label_description" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4" unique_id=1806138215]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 13
 text = "spend less money"
 
-[node name="level" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4"]
+[node name="level" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4" unique_id=270846810]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4/level" groups=["upgradeItem"]]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4/level" unique_id=150744334 groups=["upgradeItem"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.423651, 0.423651, 0.423651, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4" unique_id=875546997]
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="Label_Price_data_upgrade" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4/HBoxContainer"]
+[node name="Label_Price_data_upgrade" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4/HBoxContainer" unique_id=1168614281]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
 text = "price"
 
-[node name="Button_data_upgrade" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4/HBoxContainer"]
+[node name="Button_data_upgrade" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer/upgrade_4/HBoxContainer" unique_id=198234857]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
