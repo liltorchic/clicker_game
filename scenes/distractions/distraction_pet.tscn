@@ -15,7 +15,6 @@ wait_time = 3.0
 editor_description = "Used for assigning points to the game manager"
 
 [node name="Button_Food" type="Button" parent="." unique_id=7385776]
-layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,10 +28,10 @@ offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+layout_direction = 1
 text = "food"
 
 [node name="Button_Water" type="Button" parent="." unique_id=1987373578]
-layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,6 +45,7 @@ offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+layout_direction = 1
 text = "water"
 
 [node name="Label" type="Label" parent="." unique_id=358656675]
@@ -73,11 +73,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -25.455
+offset_top = -25.619999
 offset_right = 20.0
-offset_bottom = 14.545
+offset_bottom = 14.380051
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_011nb")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

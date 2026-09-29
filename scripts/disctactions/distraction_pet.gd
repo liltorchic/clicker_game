@@ -12,6 +12,9 @@ var award:float
 var last_reward:float = 0
 var interval = 1
 
+var scale_modifier = 0.05
+var rot_modifier = .5
+
 func present_init_upgrade_data():
 	self.upgrade_level_1_title = "Size"
 	self.upgrade_level_1_desc = "+1"
@@ -39,6 +42,10 @@ func present_init_upgrade_data():
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	var pet_texture = load("res://textures/creature.png")
+	$TextureRect.texture = pet_texture
+	
 	timer = get_node("Timer")
 	scorer = get_node("Timer_Scorer")
 	button_food = get_node("Button_Food")
@@ -63,6 +70,16 @@ func _ready() -> void:
 		u.link(self)
 		upgrade_node_target.add_child(u)
 		self.upgrade_reference = u
+		
+var t:float = 0.0
+
+func _process(_delta):
+	
+	t += _delta  # accumulate time
+	var value = 1 + scale_modifier * sin(t)
+	$TextureRect.scale = Vector2(absf(value),absf(value))
+	$TextureRect.rotation = 0.4 * sin(t * rot_modifier)
+
 		
 #run when instancing item before adding it to the scene
 func init() -> void:
@@ -148,36 +165,56 @@ func _on_timer_timeout() -> void:
 	if(health <= 0):
 		label.text = "dead"
 		_calc_score(-2)
+		scale_modifier = 0
+		rot_modifier = 0
 		die()
 		timer.stop()
 		scorer.stop()
 	elif(health < 10):
 		label.text = "dying"
+		scale_modifier = .01
+		rot_modifier = 0.01
 		_calc_score(-1)
 	elif(health < 30):
 		label.text = "sick"
 		_calc_score(0)
+		scale_modifier = .03
+		rot_modifier = .2
 	elif(health < 60):
 		label.text = "unhappy"
+		scale_modifier = .05
+		rot_modifier = .3
 		_calc_score(1)
 	elif(health < 80):
 		label.text = "ok"
+		scale_modifier = .06
+		rot_modifier = .5
 		_calc_score(2)
 	elif(health < 90):
 		label.text = "happy"
+		scale_modifier = .08
+		rot_modifier = .9
 		_calc_score(3)
 	elif(health < 101):
 		label.text = "excited"
+		scale_modifier = .09
+		rot_modifier = 40
 		_calc_score(4)
 	elif(health < 110):
 		label.text = "crazy"
+		scale_modifier = .1
+		rot_modifier = 90
 		_calc_score(2)
 	elif(health < 200):
 		label.text = "too stuffed"
+		scale_modifier = .12
+		rot_modifier = 0.5
 		_calc_score(0)
 	elif(health < 260):
 		label.text = "dead"
 		_calc_score(-2)
+		scale_modifier = 0
+		rot_modifier = 0
 		die()
 		timer.stop()
 		scorer.stop()
